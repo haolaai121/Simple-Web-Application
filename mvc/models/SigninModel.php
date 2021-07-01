@@ -8,8 +8,8 @@ class SigninModel extends DB{
         return $n + $m;
     }
 
-    public function SinhVien(){
-        $qr = "SELECT * FROM sinhvien";
+    public function Login(){
+        $qr = "SELECT * FROM users";
         return mysqli_query($this->con, $qr);
     }
 

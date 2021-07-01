@@ -4,11 +4,14 @@
 // http://localhost/php-mvc-master/Signup/Show/1/2
 
 class Signup extends Controller{
+    public $SignupModel; 
 
-    // Must have Default()
-    function Default(){
+    function __construct(){
         //Call Models
-        $teo = $this->model("SigninModel");
+        $this->SignupModel = $this->model("SignupModel");
+    }
+    function Default(){
+        
         // Call Views
         $this->view("signup", [
             
@@ -16,9 +19,35 @@ class Signup extends Controller{
 
     }
 
-    function Show($a, $b){        
-        // Call Models
+    public function UserSignup(){
+        //get data submit
+        if (isset($_POST["btnSignup"])){
+            $username = $_POST["username"];
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+            
+            $confirm_password = $_POST["confirm_password"];
+            //checking SQL injection with prepared statment
+            //checking input
+            //check username is unique
+
+            //check password and confirm_password
+            if($password!=$confirm_password)
+            {
+                //Show AJAX notification
+            }
+            //hash the password for storing
+            $password=password_hash($password,PASSWORD_DEFAULT);
+
+            //insert into database table users
+            $kq = $this->SignupModel->InsertUser($username,$password,$email);
+
+            //Show result (Fail/OK)
+            $this->view("signup", [
+                "result" -> $kq
+                ]);
         
+        }
     }
 }
 ?>

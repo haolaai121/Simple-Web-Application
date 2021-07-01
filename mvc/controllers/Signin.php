@@ -4,11 +4,14 @@
 // http://localhost/php-mvc-master/Signin/Show/1/2
 
 class Signin extends Controller{
-
+    public $SigninModel; 
+    
+    function __construct(){
+        //Call Models
+        $this->SigninModel = $this->model("SigninModel");
+    }
     // Must have Default()
     function Default(){
-        //Call Models
-        $teo = $this->model("SigninModel");
         // Call Views
         $this->view("signin", [
             
@@ -16,10 +19,7 @@ class Signin extends Controller{
 
     }
 
-    function Show($a, $b){        
-        // Call Models
-        
-    }
+    
 
 }
 ?>

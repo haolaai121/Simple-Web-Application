@@ -8,4 +8,3 @@
       
       <a id="btn_signin_signin"class="submit1" align="left" href="./Home">Sign in</a>
 
-      <p id="btn_signin_forgetpwn" class="forgot" align="center"><a href="./forgetpwd.html">Forgot Password?</p>

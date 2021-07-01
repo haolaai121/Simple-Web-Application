@@ -4,11 +4,15 @@
 // http://localhost/php-mvc-master/Home/Show/1/2
 
 class Home extends Controller{
+    public $HomeModel; 
+    
+    function __construct(){
+        //Call Models
+        $this->HomeModel = $this->model("Home");
+    }
 
     // Must have Default()
     function Default(){
-        //Call Models
-        $teo = $this->model("SigninModel");
         // Call Views
         $this->view("home", [
             
@@ -16,9 +20,5 @@ class Home extends Controller{
 
     }
 
-    function Show($a, $b){        
-        // Call Models
-        
-    }
 }
 ?>
