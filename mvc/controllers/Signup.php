@@ -14,7 +14,7 @@ class Signup extends Controller{
         
         // Call Views
         $this->view("signup", [
-            
+ 
         ]);
 
     }
@@ -35,16 +35,18 @@ class Signup extends Controller{
             if($password!=$confirm_password)
             {
                 //Show AJAX notification
+                $kq=false;
             }
             //hash the password for storing
             $password=password_hash($password,PASSWORD_DEFAULT);
 
             //insert into database table users
             $kq = $this->SignupModel->InsertUser($username,$password,$email);
-
+            echo $kq;
             //Show result (Fail/OK)
             $this->view("signup", [
-                "result" -> $kq
+                "result" -> $kq,
+
                 ]);
         
         }

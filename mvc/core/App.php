@@ -18,7 +18,6 @@ class App{
         }
         require_once "./mvc/controllers/". $this->controller .".php";
         $this->controller = new $this->controller;
-
         // Action
         if(isset($arr[1])){
             if( method_exists( $this->controller , $arr[1]) ){
@@ -31,7 +30,6 @@ class App{
         $this->params = $arr?array_values($arr):[];
 
         call_user_func_array([$this->controller, $this->action], $this->params );
-
     }
 
     function UrlProcess(){

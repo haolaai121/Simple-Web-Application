@@ -14,9 +14,10 @@ class Signin extends Controller{
     function Default(){
         // Call Views
         $this->view("signin", [
-            
+ 
         ]);
     }
+    
     function UserSignin(){
         //get data submit
         if (isset($_POST["btnSignin"])){
@@ -25,15 +26,15 @@ class Signin extends Controller{
             //checking SQL injection with prepared statment
             $kq = $this->SigninModel->CheckSignin($username,$password);
             //Checking Signin data
+            $kq = (string)$kq;
+            echo $kq;
             //Deal with session to navigate web to home or signin page
             //Show result 
             $this->view("signin", [
-                "result" -> $kq
+                "result" -> $kq,
                 ]);
         }
         
-        
-
         
     }
     

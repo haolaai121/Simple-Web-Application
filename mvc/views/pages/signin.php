@@ -9,7 +9,9 @@
       <button type="submit" name="BtnSignin" id="btn_signin_signin"class="submit1" align="left" href="#">Sign in</button>
     </form>
     <div>
-    <?php if (isset($data["result"])){?>
+    <?php
+    error_reporting(E_ERROR | E_PARSE); 
+    if (isset($data["result"])){?>
     <?php
       if ($data["result"] == "true"){
         echo "Đăng nhập thành công !";
