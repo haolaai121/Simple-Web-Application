@@ -17,7 +17,7 @@
       <input class="pass" type="password" name="password" align="center" placeholder="Password">
       <input class="pass" type="password" name="confirm_password" align="center" placeholder="Confirm Password">
       <a class="submit1" align="left" href="./Signin">Back </a>
-      <button class="submit" type="submit" name="btnSignup" align="left">Sign up</a>
+      <button class="submit" type="submit" name="btnSignup" align="left">Sign up</button>
     </form>
     <?php if (isset($data["result"])){?>
     <div>
