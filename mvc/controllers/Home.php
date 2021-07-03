@@ -8,7 +8,7 @@ class Home extends Controller{
     
     function __construct(){
         //Call Models
-        $this->HomeModel = $this->model("Home");
+        $this->HomeModel = $this->model("HomeModel");
     }
 
     // Must have Default()

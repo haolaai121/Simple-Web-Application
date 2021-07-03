@@ -46,7 +46,6 @@ class Signup extends Controller{
             //Show result (Fail/OK)
             $this->view("signup", [
                 "result" -> $kq,
-
                 ]);
         
         }
