@@ -22,9 +22,4 @@
       ?>
     </div>
   <?php } ?> 
-  <?php
-    if (isset("Back")){
-      require_once "./mvc/views/signin.php";
-    }
-    ?>
   </div>  
